@@ -3,7 +3,11 @@ API project for the course of Java
 
 Le but de mon projet est de pouvoir gérer les statistiques des équipes et des joueurs en NBA
 L’authentification :
-Pour pouvoir utiliser l’API, vous devez vous connecter avec un token. Dans l’API, vous pouvez vous inscrire et vous connecter. Il y a deux types d’utilisateurs : User et Admin. L’administrateur a droit à l’entièreté des fonctionnalités tandis que l'utilisateur n'as pas le droit de supprimer les données et à acceder à certaines autres requêtes.
+
+Pour pouvoir utiliser l’API, vous devez vous connecter avec un token. 
+Dans l’API, vous pouvez vous inscrire et vous connecter. Il y a deux types d’utilisateurs : User et Admin. 
+L’administrateur a droit à l’entièreté des fonctionnalités tandis que l'utilisateur n'as pas le droit de supprimer les données et à acceder 
+à certaines autres requêtes.
 Si vous n’êtes pas connecter, vous ne pouvez rien faire (créer, modifier, supprimer, lire). 
 
 Vous pouvez voir dans l’API 4 Controller : 
