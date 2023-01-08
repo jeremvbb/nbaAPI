@@ -41,7 +41,7 @@ public class PlayerController {
         return playerService.creer(player);
     }
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
-
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/read")
     public List<Player> read(){
 
