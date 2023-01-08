@@ -18,7 +18,7 @@ public class GameController {
 
     private final GameService gameService;
 
-   // @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/create")
     public Game create(@RequestBody Game game){
         return gameService.creer(game);
@@ -32,12 +32,12 @@ public class GameController {
     }
 
 
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public Game update(@PathVariable Long id, @RequestBody Game game){
         return gameService.modifier(id, game);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         return gameService.supprimer(id);

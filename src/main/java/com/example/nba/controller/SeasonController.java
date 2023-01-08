@@ -28,7 +28,7 @@ public class SeasonController {
         return teamService.creer(player);
     }
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PreAuthorize("hasRole('ADMIN')")
+
     @GetMapping("/read")
     public List<Season> read(){
 
@@ -41,7 +41,7 @@ public class SeasonController {
     public Season update(@PathVariable Long id, @RequestBody Season season){
         return teamService.modifier(id, season);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         return teamService.supprimer(id);

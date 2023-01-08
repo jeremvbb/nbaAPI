@@ -29,7 +29,7 @@ public class TeamController {
             return teamService.creer(player);
         }
         //@PreAuthorize("hasRole('ROLE_ADMIN')")
-        @PreAuthorize("hasRole('ADMIN')")
+
         @GetMapping("/read")
         public List<Team> read(){
 
@@ -42,7 +42,7 @@ public class TeamController {
         public Team update(@PathVariable Long id, @RequestBody Team player){
             return teamService.modifier(id, player);
         }
-
+        @PreAuthorize("hasRole('ADMIN')")
         @DeleteMapping("/delete/{id}")
         public String delete(@PathVariable Long id){
             return teamService.supprimer(id);

@@ -41,8 +41,7 @@ public class PlayerController {
         return playerService.creer(player);
     }
     //@PreAuthorize("hasRole('ROLE_ADMIN')")
-    @PreAuthorize("hasRole('ADMIN')")
-    //@PreAuthorize("isAuthenticated()")
+
     @GetMapping("/read")
     public List<Player> read(){
 
@@ -55,7 +54,7 @@ public class PlayerController {
     public Player update(@PathVariable Long id, @RequestBody Player player){
         return playerService.modifier(id, player);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         return playerService.supprimer(id);

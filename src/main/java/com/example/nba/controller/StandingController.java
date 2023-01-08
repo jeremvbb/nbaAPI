@@ -21,13 +21,12 @@ public class StandingController {
     private SeasonRepository seasonRepository;
     private final StandingService standingService;
 
-    //@PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/create")
     public Standing create(@RequestBody Standing standing){
         return standingService.creer(standing);
     }
-    //@PreAuthorize("hasRole('ROLE_ADMIN')")
-   //@PreAuthorize("hasRole('ADMIN')")
+
     @GetMapping("/read")
     public List<Standing> read(){
 
@@ -40,7 +39,7 @@ public class StandingController {
     public Standing update(@PathVariable Long id, @RequestBody Standing standing){
         return standingService.modifier(id, standing);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         return standingService.supprimer(id);

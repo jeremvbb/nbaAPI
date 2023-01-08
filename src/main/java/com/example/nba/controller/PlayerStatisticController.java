@@ -37,7 +37,7 @@ public class PlayerStatisticController {
     public PlayerStatistic update(@PathVariable Long id, @RequestBody PlayerStatistic stat){
         return statService.modifier(id, stat);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable Long id){
         return statService.supprimer(id);
